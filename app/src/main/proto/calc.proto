@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package calc;
+
+option java_package="com.example.grpcdemo";
+option java_outer_classname="CalcProto";
+
+service Calc {
+
+  rpc Add(AddRequest) returns (AddResponse){};
+
+}
+
+message AddRequest{
+  int32 first_num=1;
+  int32 second_num=2;
+}
+
+message AddResponse{
+   int32 sum_result=1;
+}
